@@ -21,10 +21,13 @@ export DH_OPTIONS
 	dh $@
 
 override_dh_auto_configure:
-	cmake . -DCMAKE_BUILD_TYPE=Release -DEVMJIT=0 -DSERPENT=1
+	mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DEVMJIT=0 -DCMAKE_INSTALL_PREFIX=$(DESTDIR) .. && cd ..
 
 override_dh_auto_install:
-	dh_auto_install
+	cd build && make -j8 &&  cd ..
+	dh_auto_install --builddirectory=build
+
+override_dh_installdocs:
 
 override_dh_auto_test:
 

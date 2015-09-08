@@ -1,1 +1,1 @@
-usr/local/bin/solc usr/bin
+build/solidity/solc/solc usr/bin

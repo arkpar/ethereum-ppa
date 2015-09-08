@@ -40,7 +40,7 @@ opwd=`pwd`
 cd $PREPDIR
 
 #prepare orig archive 
-archfile="${packagename}_${srcversion}.orig.tar.bz2"
+archfile="${packagename}_${srcversion}~${dist}1.orig.tar.bz2"
 archdir="$packagename-$version"
 
 if [ -f $opwd/$packagename/$archfile ]; then

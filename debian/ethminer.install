@@ -1,1 +1,1 @@
-usr/local/bin/ethminer usr/bin
+build/ethereum/ethminer/ethminer usr/bin

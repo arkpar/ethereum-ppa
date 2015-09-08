@@ -1,1 +1,1 @@
-usr/local/bin/lllc usr/bin
+build/ethereum/lllc/lllc usr/bin

@@ -47,12 +47,11 @@ Depends: ${misc:Depends},
          ethkey,
          ethvm,
          alethzero,
+		 alethone,
          mix,
          solc,
-         sc,
          lllc,
-         rlp,
-         testeth
+         rlp
 Description: The full stack of cpp-ethereum binaries and libraries.
  This package depends on all of the packages available in the cpp-ethereum release.
 
@@ -75,9 +74,15 @@ Description: Command line client (eth).
 
 Package: alethzero
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libethereum-gui (= ${binary:Version}), eth (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libethereum-gui (= ${binary:Version}), eth (= ${binary:Version}), libaleth (= ${binary:Version})
 Description: AlethZero browser, the reference GUI for DApp developers.
  AlethZero browser, the reference GUI for DApp developers.
+
+Package: alethone
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libethereum-gui (= ${binary:Version}), eth (= ${binary:Version}), libaleth (= ${binary:Version})
+Description: AlethOne, Minimalistic GUI Miner/Wallet
+ AlethOne, Minimalistic GUI Miner/Wallet
 
 Package: mix
 Architecture: any
@@ -160,6 +165,14 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          qml-module-qtwebengine
 Description: Support libraries for the AlethZero GUI and Mix IDE.
  Support libraries for the AlethZero GUI and Mix IDE.
+
+Package: libaleth
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         libethereum-gui (= ${binary:Version})
+Description: Support libraries for the AlethZero and AlethOne GUI.
+ Support libraries for the AlethZero and AlethOne GUI.
 
 Package: libethereum-dev
 Section: libdevel
